@@ -12,8 +12,12 @@ def show(a):
 def bubble_sort(a, asc=True):
     for i in range(len(a) - 1):
         for j in range(len(a) - 1 - i):
-            if (a[j] > a[j + 1]) if asc else (a[j] < a[j + 1]):
-                a[j], a[j + 1] = a[j + 1], a[j]  # обмін сусідніх
+            if asc:
+    if a[j] > a[j + 1]:
+        a[j], a[j + 1] = a[j + 1], a[j]
+else:
+    if a[j] < a[j + 1]:
+        a[j], a[j + 1] = a[j + 1], a[j]  # обмін сусідніх
     return a
 
 
