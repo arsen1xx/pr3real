@@ -41,8 +41,12 @@ def selection_sort(a, asc=True):
     for i in range(len(a) - 1):
         m = i
         for j in range(i + 1, len(a)):
-            if (a[j] < a[m]) if asc else (a[j] > a[m]):
-                m = j
+            if asc == True:
+                if a[j] < a[m]:
+                    m = j
+            else:
+                if a[j] > a[m]:
+                    m = j
         a[i], a[m] = a[m], a[i]
     return a
 
