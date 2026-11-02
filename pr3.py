@@ -23,13 +23,19 @@ else:
 
 def insertion_sort(a, asc=True):
     for i in range(1, len(a)):
-        key, j = a[i], i - 1
-        while j >= 0 and ((a[j] > key) if asc else (a[j] < key)):
-            a[j + 1] = a[j]  # вправо
-            j -= 1
-        a[j + 1] = key  # вставка на своє місце
+        key = a[i]
+        j = i - 1
+        if asc == True:
+            while j >= 0 and a[j] > key:
+                a[j + 1] = a[j]
+                j -= 1
+        else:
+            while j >= 0 and a[j] < key:
+                a[j + 1] = a[j]
+                j -= 1
+        a[j + 1] = key
     return a
-
+    
 
 def selection_sort(a, asc=True):
     for i in range(len(a) - 1):
